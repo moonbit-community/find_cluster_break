@@ -81,7 +81,7 @@ fn prev_cluster_break(str : String, pos : Int, include_extending : Bool) -> Int 
 
 ///|
 fn char_code_at(str : String, pos : Int) -> Int {
-  str[pos] // Returns Int (character code) directly
+  str[pos].to_int() // Returns Int (character code) directly
 }
 
 ///|

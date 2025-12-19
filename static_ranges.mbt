@@ -3,6 +3,7 @@
 // Generated on: 2025-09-01T10:23:51.699Z
 
 // Static ranges for extending characters
+
 ///|
 let range_from : Array[Int] = [
   768, 1155, 1425, 1471, 1473, 1476, 1479, 1552, 1611, 1648, 1750, 1759, 1767, 1770,

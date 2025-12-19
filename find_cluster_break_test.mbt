@@ -26,7 +26,7 @@ fn parse_test_spec(spec : String) -> (String, Array[Int]) {
       breaks.push(result.length())
       i = i + 1
     } else {
-      result = result + Int::unsafe_to_char(spec[i]).to_string()
+      result = result + spec[i].unsafe_to_char().to_string()
       i = i + 1
     }
   }

@@ -1,5 +1,5 @@
 ///|
-fnalias @find_cluster_break.(find_cluster_break, is_extending_char)
+using @find_cluster_break {find_cluster_break, is_extending_char}
 
 ///|
 fn main {
