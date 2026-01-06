@@ -1,10 +1,10 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "dii/find-cluster-break/lib"
+package "moonbit-community/find_cluster_break"
 
 // Values
-fn find_cluster_break(String, Int, forward? : Bool, include_extending? : Bool) -> Int
+pub fn find_cluster_break(String, Int, forward? : Bool, include_extending? : Bool) -> Int
 
-fn is_extending_char(Int) -> Bool
+pub fn is_extending_char(Int) -> Bool
 
 // Errors
 
