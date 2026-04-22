@@ -1,0 +1,7 @@
+import {
+  "moonbit-community/find_cluster_break",
+}
+
+options(
+  is_main: true,
+)
