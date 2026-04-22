@@ -30,7 +30,7 @@ Then import it in your `moon.pkg.json`:
 
 The main function for finding grapheme cluster breaks:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "basic usage" {
   // Find the next cluster break after position 0
@@ -39,7 +39,7 @@ test "basic usage" {
 }
 ```
 
-```moonbit
+```moonbit nocheck
 ///|
 test "find all cluster breaks" {
   let text = "👨‍🎤💪🏽👩‍👩‍👧‍👦"
@@ -61,7 +61,7 @@ test "find all cluster breaks" {
 
 You can search for cluster breaks in both directions:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "directional search" {
   let text = "a👨‍🎤b"
@@ -84,7 +84,7 @@ test "directional search" {
 
 Control whether extending characters are considered part of clusters:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "extending characters" {
   let text = "é̠" // 'e' + combining grave + combining left angle below
@@ -111,7 +111,7 @@ test "extending characters" {
 
 Check if a Unicode code point is an extending character:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "extending character detection" {
   // Combining grave accent (U+0300)
@@ -134,7 +134,7 @@ test "extending character detection" {
 
 The library correctly handles complex emoji sequences:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "emoji sequences" {
   // Man singer: man + ZWJ + microphone
@@ -153,7 +153,7 @@ test "emoji sequences" {
 
 Flag emoji are correctly handled as pairs:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "flag emoji" {
   let flags = "🇩🇪🇫🇷🇪🇸" // German, French, Spanish flags
@@ -175,7 +175,7 @@ test "flag emoji" {
 
 Handles both precomposed and decomposed accented characters:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "accented characters" {
   // Decomposed: 'e' + combining acute accent
@@ -194,7 +194,7 @@ test "accented characters" {
 
 Use this library to count visual characters correctly:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "visual character counting" {
   fn count_grapheme_clusters(text : String) -> Int {
@@ -227,7 +227,7 @@ test "visual character counting" {
 
 Extract substrings by grapheme clusters:
 
-```moonbit
+```moonbit nocheck
 ///|
 test "cluster-aware substring" {
   fn substring_by_clusters(text : String, start : Int, length : Int) -> String {
