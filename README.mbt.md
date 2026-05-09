@@ -262,7 +262,7 @@ test "cluster-aware substring" {
         end_pos = pos
       }
     }
-    text[start_pos:end_pos].to_string()
+    text[start_pos:end_pos].to_owned()
   }
 
   let text = "🚀✨🎯"
