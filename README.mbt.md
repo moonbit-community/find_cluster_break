@@ -53,7 +53,7 @@ test "find all cluster breaks" {
     breaks.push(next_break)
     pos = next_break
   }
-  inspect(breaks, content="[5, 9]") // Positions of cluster boundaries
+  debug_inspect(breaks, content="[5, 9]") // Positions of cluster boundaries
 }
 ```
 
@@ -167,7 +167,7 @@ test "flag emoji" {
     breaks.push(next)
     pos = next
   }
-  inspect(breaks, content="[4, 8]") // Each flag is 4 bytes (2 regional indicators)
+  debug_inspect(breaks, content="[4, 8]") // Each flag is 4 bytes (2 regional indicators)
 }
 ```
 

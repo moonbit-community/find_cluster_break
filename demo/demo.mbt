@@ -27,5 +27,5 @@ fn main {
     emoji_breaks.push(next)
     pos = next
   }
-  println("Emoji breaks: \{emoji_breaks}")
+  println("Emoji breaks: \{@debug.to_string(emoji_breaks)}")
 }
