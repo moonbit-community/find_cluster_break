@@ -41,7 +41,7 @@ fn test_find_cluster_break_spec(spec : String) -> Unit {
   let found : Array[Int] = []
   let mut i = 0
   while true {
-    let next = find_cluster_break(text, i)
+    let next = @find_cluster_break.find_cluster_break(text, i)
     if next == text.length() {
       break
     }
@@ -91,7 +91,7 @@ test "regional indicator flags" {
 
 ///|
 test "readme example" {
-  let result = find_cluster_break("💪🏽🦋", 0)
+  let result = @find_cluster_break.find_cluster_break("💪🏽🦋", 0)
   assert_eq(result, 4)
 }
 
@@ -101,7 +101,7 @@ test "readme example" {
 test "is_extending_char" {
   // Test some known extending characters
   // These are just basic tests - the actual implementation contains comprehensive ranges
-  assert_bool_eq(is_extending_char(768), true) // Combining grave accent
-  assert_bool_eq(is_extending_char(65), false) // 'A' - not extending
-  assert_bool_eq(is_extending_char(97), false) // 'a' - not extending
+  assert_bool_eq(@find_cluster_break.is_extending_char(768), true) // Combining grave accent
+  assert_bool_eq(@find_cluster_break.is_extending_char(65), false) // 'A' - not extending
+  assert_bool_eq(@find_cluster_break.is_extending_char(97), false) // 'a' - not extending
 }

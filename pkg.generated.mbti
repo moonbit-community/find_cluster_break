@@ -13,4 +13,3 @@ pub fn is_extending_char(Int) -> Bool
 // Type aliases
 
 // Traits
-
