@@ -1,9 +1,0 @@
-{
-  "name": "moonbit-community/find_cluster_break",
-  "version": "0.1.2",
-  "readme": "README.md",
-  "repository": "https://github.com/moonbit-community/find_cluster_break.git",
-  "license": "MIT",
-  "keywords": ["unicode", "grapheme", "cluster", "break"],
-  "description": "Find the position of grapheme cluster breaks in a string"
-}
