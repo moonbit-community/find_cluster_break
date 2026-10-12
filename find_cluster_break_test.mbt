@@ -1,7 +1,7 @@
 // Test helper function for assertions
 
 ///|
-fn assert_eq(a : Int, b : Int) -> Unit {
+fn assert_eq(a : Int32, b : Int32) -> Unit {
   if a != b {
     abort("Assertion failed: \{a} != \{b}")
   }
@@ -17,8 +17,8 @@ fn assert_bool_eq(a : Bool, b : Bool) -> Unit {
 // Helper function to parse test specification and extract expected break positions
 
 ///|
-fn parse_test_spec(spec : String) -> (String, Array[Int]) {
-  let breaks : Array[Int] = []
+fn parse_test_spec(spec : String) -> (String, Array[Int32]) {
+  let breaks : Array[Int32] = []
   let mut result = ""
   let mut i = 0
   while i < spec.length() {
@@ -38,7 +38,7 @@ fn parse_test_spec(spec : String) -> (String, Array[Int]) {
 ///|
 fn test_find_cluster_break_spec(spec : String) -> Unit {
   let (text, expected_breaks) = parse_test_spec(spec)
-  let found : Array[Int] = []
+  let found : Array[Int32] = []
   let mut i = 0
   while true {
     let next = @find_cluster_break.find_cluster_break(text, i)

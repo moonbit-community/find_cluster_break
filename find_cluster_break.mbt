@@ -1,5 +1,5 @@
 ///|
-fn is_regional_indicator(code : Int) -> Bool {
+fn is_regional_indicator(code : Int32) -> Bool {
   code >= 0x1F1E6 && code <= 0x1F1FF
 }
 
@@ -15,10 +15,10 @@ let zwj = 0x200d
 /// and flag emoji.
 pub fn find_cluster_break(
   str : String,
-  pos : Int,
-  forward? : Bool = true,
-  include_extending? : Bool = true,
-) -> Int {
+  pos : Int32,
+  forward~ : Bool = true,
+  include_extending~ : Bool = true,
+) -> Int32 {
   if forward {
     next_cluster_break(str, pos, include_extending)
   } else {
@@ -27,7 +27,11 @@ pub fn find_cluster_break(
 }
 
 ///|
-fn next_cluster_break(str : String, pos : Int, include_extending : Bool) -> Int {
+fn next_cluster_break(
+  str : String,
+  pos : Int32,
+  include_extending : Bool,
+) -> Int32 {
   let mut pos = pos
   if pos == str.length() {
     return pos
@@ -67,7 +71,11 @@ fn next_cluster_break(str : String, pos : Int, include_extending : Bool) -> Int 
 }
 
 ///|
-fn prev_cluster_break(str : String, pos : Int, include_extending : Bool) -> Int {
+fn prev_cluster_break(
+  str : String,
+  pos : Int32,
+  include_extending : Bool,
+) -> Int32 {
   let mut pos = pos
   while pos > 0 {
     let found = next_cluster_break(str, pos - 2, include_extending)
@@ -80,12 +88,12 @@ fn prev_cluster_break(str : String, pos : Int, include_extending : Bool) -> Int 
 }
 
 ///|
-fn char_code_at(str : String, pos : Int) -> Int {
+fn char_code_at(str : String, pos : Int32) -> Int32 {
   str[pos].to_int() // Returns Int (character code) directly
 }
 
 ///|
-fn code_point_at(str : String, pos : Int) -> Int {
+fn code_point_at(str : String, pos : Int32) -> Int32 {
   let code0 = char_code_at(str, pos)
   if !surrogate_high(code0) || pos + 1 == str.length() {
     return code0
@@ -98,17 +106,17 @@ fn code_point_at(str : String, pos : Int) -> Int {
 }
 
 ///|
-fn surrogate_low(ch : Int) -> Bool {
+fn surrogate_low(ch : Int32) -> Bool {
   ch >= 0xDC00 && ch < 0xE000
 }
 
 ///|
-fn surrogate_high(ch : Int) -> Bool {
+fn surrogate_high(ch : Int32) -> Bool {
   ch >= 0xD800 && ch < 0xDC00
 }
 
 ///|
-fn code_point_size(code : Int) -> Int {
+fn code_point_size(code : Int32) -> Int32 {
   if code < 0x10000 {
     1
   } else {
