@@ -43,7 +43,7 @@ test "basic usage" {
 ///|
 test "find all cluster breaks" {
   let text = "👨‍🎤💪🏽👩‍👩‍👧‍👦"
-  let breaks : Array[Int] = []
+  let breaks : Array[Int32] = []
   let mut pos = 0
   while pos < text.length() {
     let next_break = @find_cluster_break.find_cluster_break(text, pos)
@@ -157,7 +157,7 @@ Flag emoji are correctly handled as pairs:
 ///|
 test "flag emoji" {
   let flags = "🇩🇪🇫🇷🇪🇸" // German, French, Spanish flags
-  let breaks : Array[Int] = []
+  let breaks : Array[Int32] = []
   let mut pos = 0
   while pos < flags.length() {
     let next = @find_cluster_break.find_cluster_break(flags, pos)
@@ -197,7 +197,7 @@ Use this library to count visual characters correctly:
 ```mbt check
 ///|
 test "visual character counting" {
-  fn count_grapheme_clusters(text : String) -> Int {
+  fn count_grapheme_clusters(text : String) -> Int32 {
     let mut count = 0
     let mut pos = 0
     while pos < text.length() {
@@ -230,7 +230,11 @@ Extract substrings by grapheme clusters:
 ```mbt check
 ///|
 test "cluster-aware substring" {
-  fn substring_by_clusters(text : String, start : Int, length : Int) -> String {
+  fn substring_by_clusters(
+    text : String,
+    start : Int32,
+    length : Int32,
+  ) -> String {
     let mut current_cluster = 0
     let mut pos = 0
     let mut start_pos = 0
